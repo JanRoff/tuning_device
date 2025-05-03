@@ -9,6 +9,8 @@
 #include <SPI.h>
 #include <TFT_eSPI.h>
 
+// ***** constants *****:
+
 const uint8_t SENSOR = 35;
 
 const int SAMPLES = 1024;
@@ -22,6 +24,8 @@ const int SMOOTHINGBUFFERSIZE = 5;
 double SMOOTHINGBUFFER[SMOOTHINGBUFFERSIZE];
 
 TFT_eSPI tft = TFT_eSPI();
+
+// ***** functions *****:
 
 void setup() {
   // setup TFT screen
@@ -140,6 +144,8 @@ void drawPointer(double value) {
 
   previousValue = value;
 }
+
+// ***** main loop *****:
 
 void loop() {
   double samplingFrequency = readSamplesFromMicrophone(SAMPLES);
